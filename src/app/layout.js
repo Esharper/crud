@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css"; // Import your global styles
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,8 +11,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}
-      <footer className="text-center">&copy; Elgin Sharper - Crud app </footer>
+      <body className={inter.className}>
+        <div className="App">
+          <nav className="bg-gray-800 p-4 text-white">
+            <ul className="flex space-x-4">
+              <li>
+                <a href="/">Home</a> {/* Use <a> for simple navigation */}
+              </li>
+              <li>
+                <a href="/management">Management</a>
+              </li>
+            </ul>
+          </nav>
+          <div className="container mx-auto mt-8">
+            {children}
+          </div>
+          <footer className="text-center mt-8">&copy; Elgin Sharper - Crud app</footer>
+        </div>
       </body>
     </html>
   );
