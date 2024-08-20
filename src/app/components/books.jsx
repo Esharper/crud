@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Book } from "@/utils/library"; // Ensure this path is correct
+import ManagementPage from './ManagementPage';
 
 export default function BookComponent({
   id,
